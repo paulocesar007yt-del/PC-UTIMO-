@@ -1,0 +1,606 @@
+/* ================================
+   WINDOWS 11 CLOUD PC
+   CSS COMPLETO
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #0b1220;
+    color: white;
+}
+
+/* ================================
+   ÁREA DE TRABALHO
+================================ */
+
+.desktop {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+
+    background:
+        radial-gradient(circle at 30% 30%, #1d4ed8 0%, transparent 35%),
+        radial-gradient(circle at 80% 70%, #7c3aed 0%, transparent 35%),
+        linear-gradient(135deg, #07111f, #101827);
+}
+
+/* ================================
+   ÍCONES DA ÁREA DE TRABALHO
+================================ */
+
+.desktop-icons {
+    position: absolute;
+    top: 25px;
+    left: 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.desktop-icon {
+    width: 80px;
+    padding: 8px;
+
+    text-align: center;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.desktop-icon:hover {
+    background: rgba(255,255,255,0.12);
+}
+
+.desktop-icon .icon {
+    font-size: 36px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.desktop-icon span {
+    font-size: 13px;
+}
+
+/* ================================
+   JANELAS
+================================ */
+
+.window {
+    position: absolute;
+
+    width: 700px;
+    height: 450px;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    background: rgba(25, 30, 40, 0.94);
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,0.5);
+
+    backdrop-filter: blur(20px);
+}
+
+.window-header {
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 15px;
+
+    background: rgba(255,255,255,0.06);
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.window-title {
+    font-size: 14px;
+}
+
+.window-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.window-buttons button {
+    width: 28px;
+    height: 28px;
+
+    border: none;
+    border-radius: 6px;
+
+    background: transparent;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+.window-buttons button:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+.window-content {
+    height: calc(100% - 45px);
+    padding: 20px;
+    overflow: auto;
+}
+
+/* ================================
+   TERMINAL
+================================ */
+
+.terminal {
+    width: 100%;
+    height: 100%;
+
+    background: #050505;
+
+    padding: 15px;
+
+    border-radius: 8px;
+
+    color: #d1d5db;
+
+    font-family: Consolas, monospace;
+
+    overflow: auto;
+}
+
+.terminal-line {
+    margin-bottom: 6px;
+}
+
+.terminal-input {
+    display: flex;
+    align-items: center;
+}
+
+.terminal-input span {
+    color: #22c55e;
+    margin-right: 8px;
+}
+
+.terminal-input input {
+    flex: 1;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-family: Consolas, monospace;
+}
+
+/* ================================
+   EXPLORADOR
+================================ */
+
+.file-explorer {
+    display: flex;
+    height: 100%;
+}
+
+.sidebar {
+    width: 180px;
+
+    padding: 15px;
+
+    background: rgba(255,255,255,0.04);
+
+    border-right: 1px solid rgba(255,255,255,0.08);
+}
+
+.sidebar-item {
+    padding: 10px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+}
+
+.sidebar-item:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.files {
+    flex: 1;
+    padding: 20px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fill, minmax(100px, 1fr));
+
+    gap: 20px;
+}
+
+.file {
+    padding: 15px;
+
+    border-radius: 8px;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.file:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.file-icon {
+    font-size: 40px;
+    margin-bottom: 8px;
+}
+
+/* ================================
+   BARRA DE TAREFAS
+================================ */
+
+.taskbar {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(15, 20, 30, 0.88);
+
+    backdrop-filter: blur(20px);
+
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ================================
+   MENU INICIAR
+================================ */
+
+.start-button {
+    position: absolute;
+    left: 15px;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+}
+
+.start-button:hover {
+    background: rgba(255,255,255,0.12);
+}
+
+.taskbar-apps {
+    display: flex;
+    gap: 6px;
+}
+
+.taskbar-app {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+.taskbar-app:hover {
+    background: rgba(255,255,255,0.12);
+}
+
+/* ================================
+   RELÓGIO
+================================ */
+
+.clock {
+    position: absolute;
+    right: 15px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    font-size: 12px;
+
+    line-height: 16px;
+}
+
+/* ================================
+   MENU INICIAR
+================================ */
+
+.start-menu {
+    position: absolute;
+
+    bottom: 68px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 520px;
+    height: 580px;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    background: rgba(30, 35, 45, 0.96);
+
+    backdrop-filter: blur(25px);
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    box-shadow: 0 25px 70px rgba(0,0,0,0.5);
+
+    display: none;
+}
+
+.start-menu.active {
+    display: block;
+}
+
+.search {
+    width: 100%;
+
+    padding: 12px 15px;
+
+    border: none;
+
+    outline: none;
+
+    border-radius: 8px;
+
+    background: rgba(255,255,255,0.1);
+
+    color: white;
+}
+
+.start-apps {
+    margin-top: 25px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+.start-app {
+    padding: 15px;
+
+    border-radius: 8px;
+
+    text-align: center;
+
+    cursor: pointer;
+}
+
+.start-app:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.start-app-icon {
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+/* ================================
+   LOGIN
+================================ */
+
+.login-screen {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(circle at 50% 40%, #2563eb, transparent 30%),
+        #050b15;
+}
+
+.login-box {
+    width: 360px;
+
+    padding: 35px;
+
+    border-radius: 15px;
+
+    background: rgba(20,25,35,0.9);
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+
+    text-align: center;
+}
+
+.login-box h1 {
+    margin-bottom: 10px;
+}
+
+.login-box p {
+    margin-bottom: 25px;
+
+    color: #9ca3af;
+}
+
+.login-box input {
+    width: 100%;
+
+    padding: 13px;
+
+    margin-bottom: 12px;
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    outline: none;
+
+    border-radius: 8px;
+
+    background: rgba(255,255,255,0.08);
+
+    color: white;
+}
+
+.login-box button {
+    width: 100%;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.login-box button:hover {
+    background: #1d4ed8;
+}
+
+/* ================================
+   NOTIFICAÇÕES
+================================ */
+
+.notification {
+    position: absolute;
+
+    right: 20px;
+    bottom: 75px;
+
+    width: 300px;
+
+    padding: 18px;
+
+    border-radius: 12px;
+
+    background: rgba(30,35,45,0.95);
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+
+    animation: notificationIn 0.3s ease;
+}
+
+@keyframes notificationIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================================
+   RESPONSIVO
+================================ */
+
+@media (max-width: 800px) {
+
+    .window {
+        width: 90%;
+        height: 70%;
+    }
+
+    .start-menu {
+        width: 90%;
+        height: 70%;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .desktop-icons {
+        gap: 10px;
+    }
+
+    .desktop-icon {
+        width: 65px;
+    }
+
+    .start-apps {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .login-box {
+        width: 90%;
+    }
+
+}
+
+Esse CSS cria a aparência do Windows 11: desktop, janelas, barra de tarefas, menu Iniciar, explorador, terminal e tela de login.
+
+Mas atenção: isso ainda é somente a interface. Para virar um Windows 11 real na nuvem, o JavaScript/backend precisa conectar essa interface à VM Windows por RDP/WebSocket/Guacamole.
