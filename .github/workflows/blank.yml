@@ -1,0 +1,44 @@
+name: Windows Cloud PC - Build
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build Cloud PC
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar código
+        uses: actions/checkout@v4
+
+      - name: Verificar arquivos
+        run: |
+          echo "Verificando projeto..."
+          ls -la
+
+      - name: Criar pasta de build
+        run: |
+          mkdir -p build
+
+      - name: Copiar arquivos do projeto
+        run: |
+          if [ -f index.html ]; then cp index.html build/; fi
+          if [ -f style.css ]; then cp style.css build/; fi
+          if [ -f script.js ]; then cp script.js build/; fi
+
+      - name: Verificar build
+        run: |
+          echo "Build concluído."
+          echo "Arquivos:"
+          find build -maxdepth 2 -type f
+
+      - name: Gerar artefato
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-cloud-pc
+          path: build/
